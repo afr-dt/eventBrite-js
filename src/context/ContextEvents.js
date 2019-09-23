@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+const API_KEY = process.env.REACT_APP_SECRET_KEY;
+const base_url = process.env.REACT_APP_BASE_URL;
+
 const EventContext = React.createContext();
 export const EventConsumer = EventContext.Consumer;
 
@@ -10,7 +13,7 @@ class EventProvider extends Component {
   };
 
   getEvents = async search => {
-    let url = `https://www.eventbriteapi.com/v3/events/search/?q=${search.name}&categories=${search.category}&sort_by=date&token=${process.env.REACT_APP_SECRET_KEY}&locale=es_ES`;
+    let url = `${base_url}events/search/?q=${search.name}&categories=${search.category}&sort_by=date&token=${API_KEY}&locale=es_ES`;
 
     // request API
     const events = await axios.get(url);

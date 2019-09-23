@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 const API_KEY = process.env.REACT_APP_SECRET_KEY;
-
+const base_url = process.env.REACT_APP_BASE_URL;
 // Create context
 const ContextCategories = React.createContext();
 export const ConsumerCategories = ContextCategories.Consumer;
@@ -17,7 +17,7 @@ class ProviderCategories extends Component {
   }
 
   getCategories = async () => {
-    let url = `https://www.eventbriteapi.com/v3/categories/?token=${API_KEY}&locale=es_ES`;
+    let url = `${base_url}categories/?token=${API_KEY}&locale=es_ES`;
     let categories = await axios.get(url);
 
     this.setState({
