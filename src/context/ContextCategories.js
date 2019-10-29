@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { API_KEY } from '../services';
+import { base_url } from '../services';
 
-const API_KEY = process.env.REACT_APP_SECRET_KEY;
-const base_url = process.env.REACT_APP_BASE_URL;
 // Create context
 const ContextCategories = React.createContext();
 export const ConsumerCategories = ContextCategories.Consumer;

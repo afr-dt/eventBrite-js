@@ -1,3 +1,14 @@
+### Step one
+
+> create for API_KEY and BASE_URL
+
+```
+.env.development
+.env.production
+```
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
-const API_KEY = process.env.REACT_APP_SECRET_KEY;
-const base_url = process.env.REACT_APP_BASE_URL;
+import { API_KEY } from '../services';
+import { base_url } from '../services';
 
 const EventContext = React.createContext();
 export const EventConsumer = EventContext.Consumer;
